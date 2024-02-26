@@ -18,4 +18,12 @@ public class ItemsDAOImpl implements itemsDAO{
         List<Items> items = theQuery.getResultList();
         return items;
     }
+
+    @Override
+    public Items findByName(String itemName) {
+        Items item = entityManager.createQuery("SELECT e FROM Items e WHERE e.item_name = :item_name", Items.class)
+                .setParameter("item_name", itemName)
+                .getSingleResult();
+       return item;
+    }
 }

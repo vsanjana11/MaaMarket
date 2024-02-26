@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface itemsDAO {
     List<Items> findAll();
+    Items findByName(String itemName);
 }

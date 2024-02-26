@@ -20,4 +20,12 @@ public class ItemServiceImpl implements ItemsService{
         List<Items> items = itemsDAO.findAll();
         return items;
     }
+
+    @Override
+    public Items findByName(String itemName) {
+        Items items = itemsDAO.findByName(itemName);
+        return items;
+    }
+
+
 }
