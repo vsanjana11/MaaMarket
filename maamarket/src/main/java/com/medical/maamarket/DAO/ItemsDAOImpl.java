@@ -28,8 +28,9 @@ public class ItemsDAOImpl implements itemsDAO{
        return item;
     }
 
-    public void deleteByName(String name) {
-
+    @Override
+    public void deleteByName(Items itemName) {
+        entityManager.remove(itemName);
     }
 
     @Override

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Items")
+@RequestMapping("/")
 public class ItemsController {
     @Autowired
     ItemsService itemsService;
@@ -38,5 +38,12 @@ public class ItemsController {
         Items dbitem = itemsService.save(theItem);
         return dbitem;
 
+    }
+
+    @DeleteMapping("/deleteByName/{itemName}")
+    public String deleteByName(@PathVariable String itemName){
+        Items item = itemsService.findByName(itemName);
+        itemsService.deleteByName(item);
+        return " deleted";
     }
 }

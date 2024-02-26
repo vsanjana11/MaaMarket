@@ -2,6 +2,7 @@ package com.medical.maamarket.service;
 
 import com.medical.maamarket.DAO.ItemsDAOImpl;
 import com.medical.maamarket.Entity.Items;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,10 +27,14 @@ public class ItemServiceImpl implements ItemsService{
         Items items = itemsDAO.findByName(itemName);
         return items;
     }
-    public void deleteByName(String name) {
+
+    @Transactional
+    @Override
+    public void deleteByName(Items name) {
         itemsDAO.deleteByName(name);
     }
 
+    @Transactional
     @Override
     public Items save(Items items) {
         return itemsDAO.save(items);
