@@ -22,10 +22,21 @@ public class ItemServiceImpl implements ItemsService{
     }
 
     @Override
+<<<<<<< HEAD
     public Items findByName(String itemName) {
         Items items = itemsDAO.findByName(itemName);
         return items;
     }
 
 
+=======
+    public void deleteByName(String name) {
+        itemsDAO.deleteByName(name);
+    }
+
+    @Override
+    public Items save(Items items) {
+        return itemsDAO.save(items);
+    }
+>>>>>>> 61ba450f991389d91498e686e3e85d53d7e42154
 }

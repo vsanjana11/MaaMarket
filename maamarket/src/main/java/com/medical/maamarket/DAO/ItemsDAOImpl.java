@@ -20,10 +20,23 @@ public class ItemsDAOImpl implements itemsDAO{
     }
 
     @Override
+<<<<<<< HEAD
     public Items findByName(String itemName) {
         Items item = entityManager.createQuery("SELECT e FROM Items e WHERE e.item_name = :item_name", Items.class)
                 .setParameter("item_name", itemName)
                 .getSingleResult();
        return item;
     }
+=======
+    public void deleteByName(String name) {
+
+    }
+
+    @Override
+    public Items save(Items items) {
+        Items dbitems = entityManager.merge(items);
+        return dbitems;
+    }
+
+>>>>>>> 61ba450f991389d91498e686e3e85d53d7e42154
 }
