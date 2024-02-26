@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "items")
-@Component
 public class items {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
