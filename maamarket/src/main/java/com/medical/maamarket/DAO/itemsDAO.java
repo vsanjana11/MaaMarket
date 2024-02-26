@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface itemsDAO {
     List<Items> findAll();
+    void deleteByName(String name);
+
+    Items save(Items items);
+
 }

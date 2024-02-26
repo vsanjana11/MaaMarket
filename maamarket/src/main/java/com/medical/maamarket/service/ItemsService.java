@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface ItemsService {
     List<Items> findAll();
+    void deleteByName(String name);
+
+    Items save(Items items);
 }

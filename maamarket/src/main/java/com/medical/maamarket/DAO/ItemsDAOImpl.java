@@ -18,4 +18,16 @@ public class ItemsDAOImpl implements itemsDAO{
         List<Items> items = theQuery.getResultList();
         return items;
     }
+
+    @Override
+    public void deleteByName(String name) {
+
+    }
+
+    @Override
+    public Items save(Items items) {
+        Items dbitems = entityManager.merge(items);
+        return dbitems;
+    }
+
 }

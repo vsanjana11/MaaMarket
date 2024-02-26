@@ -20,4 +20,14 @@ public class ItemServiceImpl implements ItemsService{
         List<Items> items = itemsDAO.findAll();
         return items;
     }
+
+    @Override
+    public void deleteByName(String name) {
+        itemsDAO.deleteByName(name);
+    }
+
+    @Override
+    public Items save(Items items) {
+        return itemsDAO.save(items);
+    }
 }
