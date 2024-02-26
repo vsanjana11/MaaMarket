@@ -9,7 +9,7 @@ public interface itemsDAO {
 
     Items findByName(String itemName);
 
-    void deleteByName(String name);
+    void deleteByName(Items items);
 
     Items save(Items items);
 
